@@ -1,6 +1,6 @@
 package in.emithram.web.rest;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import in.emithram.domain.Authority;
 import in.emithram.domain.User;
 import in.emithram.repository.UserRepository;
@@ -36,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @AutoConfigureMockMvc
 @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 public class UserResourceIT {
 
     private static final String DEFAULT_LOGIN = "johndoe";

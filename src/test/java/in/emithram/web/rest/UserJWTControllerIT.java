@@ -1,6 +1,6 @@
 package in.emithram.web.rest;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import in.emithram.domain.User;
 import in.emithram.repository.UserRepository;
 import in.emithram.web.rest.vm.LoginVM;
@@ -27,7 +27,7 @@ import static org.hamcrest.Matchers.not;
  * Integration tests for the {@link UserJWTController} REST controller.
  */
 @AutoConfigureMockMvc
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 public class UserJWTControllerIT {
 
     @Autowired

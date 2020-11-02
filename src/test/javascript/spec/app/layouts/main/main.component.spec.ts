@@ -5,7 +5,7 @@ import { Subject, of } from 'rxjs';
 import { TranslateModule, TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 import { MainComponent } from 'app/layouts/main/main.component';
-import { EmithramInsuraneTestModule } from '../../../test.module';
+import { EmithramInsuranceTestModule } from '../../../test.module';
 import { MockRouter } from '../../../helpers/mock-route.service';
 
 describe('Component Tests', () => {
@@ -19,7 +19,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [EmithramInsuraneTestModule, TranslateModule.forRoot()],
+        imports: [EmithramInsuranceTestModule, TranslateModule.forRoot()],
         declarations: [MainComponent],
         providers: [Title],
       })

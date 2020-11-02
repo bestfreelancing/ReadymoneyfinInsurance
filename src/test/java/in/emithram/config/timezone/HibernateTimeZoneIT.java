@@ -1,6 +1,6 @@
 package in.emithram.config.timezone;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import in.emithram.repository.timezone.DateTimeWrapper;
 import in.emithram.repository.timezone.DateTimeWrapperRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for the ZoneId Hibernate configuration.
  */
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 public class HibernateTimeZoneIT {
 
     @Autowired

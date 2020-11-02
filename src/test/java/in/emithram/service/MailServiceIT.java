@@ -2,7 +2,7 @@ package in.emithram.service;
 
 import in.emithram.config.Constants;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import in.emithram.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,7 +40,7 @@ import static org.mockito.Mockito.*;
 /**
  * Integration tests for {@link MailService}.
  */
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 public class MailServiceIT {
 
     private static final String[] languages = {

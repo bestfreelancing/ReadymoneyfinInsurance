@@ -1,7 +1,7 @@
 {
-  "name": "emithram-insurane",
+  "name": "emithram-insurance",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for EmithramInsurane",
+  "description": "Description for EmithramInsurance",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

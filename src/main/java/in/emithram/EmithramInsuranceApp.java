@@ -22,18 +22,18 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
-public class EmithramInsuraneApp {
+public class EmithramInsuranceApp {
 
-    private static final Logger log = LoggerFactory.getLogger(EmithramInsuraneApp.class);
+    private static final Logger log = LoggerFactory.getLogger(EmithramInsuranceApp.class);
 
     private final Environment env;
 
-    public EmithramInsuraneApp(Environment env) {
+    public EmithramInsuranceApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes EmithramInsurane.
+     * Initializes EmithramInsurance.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -58,7 +58,7 @@ public class EmithramInsuraneApp {
      * @param args the command line arguments.
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(EmithramInsuraneApp.class);
+        SpringApplication app = new SpringApplication(EmithramInsuranceApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);

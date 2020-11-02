@@ -1,6 +1,6 @@
 package in.emithram.security;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import in.emithram.domain.User;
 import in.emithram.repository.UserRepository;
 
@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 /**
  * Integrations tests for {@link DomainUserDetailsService}.
  */
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 @Transactional
 public class DomainUserDetailsServiceIT {
 

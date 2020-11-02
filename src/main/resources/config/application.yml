@@ -59,7 +59,7 @@ management:
 
 spring:
   application:
-    name: EmithramInsurane
+    name: EmithramInsurance
   profiles:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
     # Otherwise, it will be filled in by maven when building the JAR file
@@ -88,7 +88,7 @@ spring:
       hibernate.query.in_clause_parameter_padding: true
       hibernate.cache.region.factory_class: com.hazelcast.hibernate.HazelcastCacheRegionFactory
       hibernate.cache.use_minimal_puts: true
-      hibernate.cache.hazelcast.instance_name: EmithramInsurane
+      hibernate.cache.hazelcast.instance_name: EmithramInsurance
       hibernate.cache.hazelcast.use_lite_member: true
     hibernate:
       ddl-auto: none
@@ -101,13 +101,13 @@ spring:
     allow-bean-definition-overriding: true
   task:
     execution:
-      thread-name-prefix: emithram-insurane-task-
+      thread-name-prefix: emithram-insurance-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: emithram-insurane-scheduling-
+      thread-name-prefix: emithram-insurance-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -135,7 +135,7 @@ info:
 
 jhipster:
   clientApp:
-    name: 'emithramInsuraneApp'
+    name: 'emithramInsuranceApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
   #     allowed-origins: "*"
@@ -145,11 +145,11 @@ jhipster:
   #     allow-credentials: true
   #     max-age: 1800
   mail:
-    from: EmithramInsurane@localhost
+    from: EmithramInsurance@localhost
   swagger:
     default-include-pattern: /api/.*
-    title: EmithramInsurane API
-    description: EmithramInsurane API documentation
+    title: EmithramInsurance API
+    description: EmithramInsurance API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:

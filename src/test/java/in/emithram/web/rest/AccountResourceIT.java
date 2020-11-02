@@ -1,6 +1,6 @@
 package in.emithram.web.rest;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import in.emithram.config.Constants;
 import in.emithram.domain.User;
 import in.emithram.repository.AuthorityRepository;
@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @AutoConfigureMockMvc
 @WithMockUser(value = TEST_USER_LOGIN)
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 public class AccountResourceIT {
     static final String TEST_USER_LOGIN = "test";
 

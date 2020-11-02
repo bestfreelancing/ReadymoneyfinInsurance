@@ -1,6 +1,6 @@
 package in.emithram.repository;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 
 import in.emithram.config.Constants;
 import in.emithram.config.audit.AuditEventConverter;
@@ -28,7 +28,7 @@ import static in.emithram.repository.CustomAuditEventRepository.EVENT_DATA_COLUM
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

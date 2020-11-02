@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { EmithramInsuraneSharedModule } from 'app/shared/shared.module';
+import { EmithramInsuranceSharedModule } from 'app/shared/shared.module';
 
 import { HealthComponent } from './health.component';
 import { HealthModalComponent } from './health-modal.component';
@@ -8,7 +8,7 @@ import { HealthModalComponent } from './health-modal.component';
 import { healthRoute } from './health.route';
 
 @NgModule({
-  imports: [EmithramInsuraneSharedModule, RouterModule.forChild([healthRoute])],
+  imports: [EmithramInsuranceSharedModule, RouterModule.forChild([healthRoute])],
   declarations: [HealthComponent, HealthModalComponent],
   entryComponents: [HealthModalComponent],
 })

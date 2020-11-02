@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { FormBuilder } from '@angular/forms';
 import { of, throwError } from 'rxjs';
 
-import { EmithramInsuraneTestModule } from '../../../test.module';
+import { EmithramInsuranceTestModule } from '../../../test.module';
 import { PasswordComponent } from 'app/account/password/password.component';
 import { PasswordService } from 'app/account/password/password.service';
 
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
-        imports: [EmithramInsuraneTestModule],
+        imports: [EmithramInsuranceTestModule],
         declarations: [PasswordComponent],
         providers: [FormBuilder],
       })

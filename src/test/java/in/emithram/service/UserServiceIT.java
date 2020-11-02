@@ -1,6 +1,6 @@
 package in.emithram.service;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import in.emithram.config.Constants;
 import in.emithram.domain.User;
 import in.emithram.repository.UserRepository;
@@ -32,7 +32,7 @@ import static org.mockito.Mockito.when;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 @Transactional
 public class UserServiceIT {
 

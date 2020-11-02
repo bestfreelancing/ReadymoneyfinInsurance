@@ -2,7 +2,7 @@ package in.emithram.service;
 
 import in.emithram.domain.PersistentAuditEvent;
 import in.emithram.repository.PersistenceAuditEventRepository;
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link AuditEventService}.
  */
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 @Transactional
 public class AuditEventServiceIT {
     @Autowired

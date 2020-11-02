@@ -54,13 +54,13 @@ public class CacheConfiguration {
     @Bean
     public HazelcastInstance hazelcastInstance(JHipsterProperties jHipsterProperties) {
         log.debug("Configuring Hazelcast");
-        HazelcastInstance hazelCastInstance = Hazelcast.getHazelcastInstanceByName("EmithramInsurane");
+        HazelcastInstance hazelCastInstance = Hazelcast.getHazelcastInstanceByName("EmithramInsurance");
         if (hazelCastInstance != null) {
             log.debug("Hazelcast already initialized");
             return hazelCastInstance;
         }
         Config config = new Config();
-        config.setInstanceName("EmithramInsurane");
+        config.setInstanceName("EmithramInsurance");
         config.getNetworkConfig().setPort(5701);
         config.getNetworkConfig().setPortAutoIncrement(true);
 

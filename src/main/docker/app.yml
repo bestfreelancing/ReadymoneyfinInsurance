@@ -1,16 +1,16 @@
 version: '2'
 services:
-  emithraminsurane-app:
-    image: emithraminsurane
+  emithraminsurance-app:
+    image: emithraminsurance
     environment:
       - _JAVA_OPTIONS=-Xmx512m -Xms256m
       - SPRING_PROFILES_ACTIVE=prod,swagger
       - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
-      - SPRING_DATASOURCE_URL=jdbc:mysql://emithraminsurane-mysql:3306/emithraminsurane?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_URL=jdbc:mysql://emithraminsurance-mysql:3306/emithraminsurance?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
       - JHIPSTER_SLEEP=30 # gives time for other services to boot before the application
     ports:
       - 8080:8080
-  emithraminsurane-mysql:
+  emithraminsurance-mysql:
     extends:
       file: mysql.yml
-      service: emithraminsurane-mysql
+      service: emithraminsurance-mysql

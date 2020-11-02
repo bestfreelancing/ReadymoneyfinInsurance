@@ -1,4 +1,4 @@
-# EmithramInsurane
+# EmithramInsurance
 
 This application was generated using JHipster 6.10.1, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.10.1](https://www.jhipster.tech/documentation-archive/v6.10.1).
 
@@ -17,6 +17,13 @@ npm install
 ```
 
 We use npm scripts and [Webpack][] as our build system.
+
+If you are using hazelcast as a cache, you will have to launch a cache server.
+To start your cache server, run:
+
+```
+docker-compose -f src/main/docker/hazelcast-management-center.yml up -d
+```
 
 Run the following commands in two separate terminals to create a blissful development experience where your browser
 auto-refreshes when files change on your hard drive.
@@ -106,7 +113,7 @@ update src/main/webapp/app/app.module.ts
 
 ### Packaging as jar
 
-To build the final jar and optimize the EmithramInsurane application for production, run:
+To build the final jar and optimize the EmithramInsurance application for production, run:
 
 ```
 

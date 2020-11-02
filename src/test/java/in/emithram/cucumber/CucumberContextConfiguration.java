@@ -1,6 +1,6 @@
 package in.emithram.cucumber;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import io.cucumber.java.Before;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
@@ -8,7 +8,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 @SpringBootTest
 @WebAppConfiguration
-@ContextConfiguration(classes = EmithramInsuraneApp.class)
+@ContextConfiguration(classes = EmithramInsuranceApp.class)
 public class CucumberContextConfiguration {
 
     @Before

@@ -1,6 +1,6 @@
 package in.emithram.web.rest;
 
-import in.emithram.EmithramInsuraneApp;
+import in.emithram.EmithramInsuranceApp;
 import in.emithram.domain.PersistentAuditEvent;
 import in.emithram.repository.PersistenceAuditEventRepository;
 import in.emithram.security.AuthoritiesConstants;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @AutoConfigureMockMvc
 @WithMockUser(authorities = AuthoritiesConstants.ADMIN)
-@SpringBootTest(classes = EmithramInsuraneApp.class)
+@SpringBootTest(classes = EmithramInsuranceApp.class)
 @Transactional
 public class AuditResourceIT {
 
