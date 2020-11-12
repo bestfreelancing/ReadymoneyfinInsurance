@@ -39,6 +39,11 @@ Navbar
       color: $navbar-dark-hover-color;
     }
   }
+
+  .nav-item h6,
+  fa-icon {
+    color: #18bc9c;
+  }
 }
 
 /* ==========================================================================
