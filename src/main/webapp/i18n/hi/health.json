@@ -13,8 +13,7 @@
     "indicator": {
       "diskSpace": "डिस्क स्थान",
       "mail": "ईमेल",
-      "ping": "Application",
-      "db": "Database"
+      "ping": "Application"
     },
     "table": {
       "service": "सेवा का नाम",

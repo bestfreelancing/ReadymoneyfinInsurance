@@ -13,8 +13,7 @@
     "indicator": {
       "diskSpace": "Disk space",
       "mail": "Email",
-      "ping": "Application",
-      "db": "Database"
+      "ping": "Application"
     },
     "table": {
       "service": "Service name",

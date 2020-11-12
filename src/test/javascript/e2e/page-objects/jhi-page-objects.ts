@@ -63,18 +63,6 @@ export class NavBarPage {
     return new SignInPage();
   }
 
-  async getPasswordPage(): Promise<PasswordPage> {
-    await this.clickOnAccountMenu();
-    await this.clickOnPasswordMenu();
-    return new PasswordPage();
-  }
-
-  async getSettingsPage(): Promise<SettingsPage> {
-    await this.clickOnAccountMenu();
-    await this.clickOnSettingsMenu();
-    return new SettingsPage();
-  }
-
   async goToEntity(entityName: string): Promise<void> {
     await this.clickOnEntityMenu();
     await this.clickOnEntity(entityName);
@@ -133,101 +121,5 @@ export class SignInPage {
 
   async login(): Promise<void> {
     await this.loginButton.click();
-  }
-}
-
-export class PasswordPage {
-  currentPassword = element(by.id('currentPassword'));
-  password = element(by.id('newPassword'));
-  confirmPassword = element(by.id('confirmPassword'));
-  saveButton = element(by.css('button[type=submit]'));
-  title = element.all(by.css('h2')).first();
-
-  async setCurrentPassword(password: string): Promise<void> {
-    await this.currentPassword.sendKeys(password);
-  }
-
-  async setPassword(password: string): Promise<void> {
-    await this.password.sendKeys(password);
-  }
-
-  async getPassword(): Promise<string> {
-    return this.password.getAttribute('value');
-  }
-
-  async clearPassword(): Promise<void> {
-    await this.password.clear();
-  }
-
-  async setConfirmPassword(confirmPassword: string): Promise<void> {
-    await this.confirmPassword.sendKeys(confirmPassword);
-  }
-
-  async getConfirmPassword(): Promise<string> {
-    return this.confirmPassword.getAttribute('value');
-  }
-
-  async clearConfirmPassword(): Promise<void> {
-    await this.confirmPassword.clear();
-  }
-
-  async getTitle(): Promise<string> {
-    return this.title.getAttribute('jhiTranslate');
-  }
-
-  async save(): Promise<void> {
-    await this.saveButton.click();
-  }
-}
-
-export class SettingsPage {
-  firstName = element(by.id('firstName'));
-  lastName = element(by.id('lastName'));
-  email = element(by.id('email'));
-  saveButton = element(by.css('button[type=submit]'));
-  title = element.all(by.css('h2')).first();
-
-  async setFirstName(firstName: string): Promise<void> {
-    await this.firstName.sendKeys(firstName);
-  }
-
-  async getFirstName(): Promise<string> {
-    return this.firstName.getAttribute('value');
-  }
-
-  async clearFirstName(): Promise<void> {
-    await this.firstName.clear();
-  }
-
-  async setLastName(lastName: string): Promise<void> {
-    await this.lastName.sendKeys(lastName);
-  }
-
-  async getLastName(): Promise<string> {
-    return this.lastName.getAttribute('value');
-  }
-
-  async clearLastName(): Promise<void> {
-    await this.lastName.clear();
-  }
-
-  async setEmail(email: string): Promise<void> {
-    await this.email.sendKeys(email);
-  }
-
-  async getEmail(): Promise<string> {
-    return this.email.getAttribute('value');
-  }
-
-  async clearEmail(): Promise<void> {
-    await this.email.clear();
-  }
-
-  async getTitle(): Promise<string> {
-    return this.title.getAttribute('jhiTranslate');
-  }
-
-  async save(): Promise<void> {
-    await this.saveButton.click();
   }
 }

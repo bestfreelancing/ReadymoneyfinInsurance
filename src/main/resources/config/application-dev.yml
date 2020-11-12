@@ -35,24 +35,6 @@ spring:
   jackson:
     serialization:
       indent-output: true
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://localhost:3306/EmithramInsurance?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-    username: root
-    password: root
-    hikari:
-      poolName: Hikari
-      auto-commit: false
-      data-source-properties:
-        cachePrepStmts: true
-        prepStmtCacheSize: 250
-        prepStmtCacheSqlLimit: 2048
-        useServerPrepStmts: true
-  jpa:
-    show-sql: true
-  liquibase:
-    # Remove 'faker' if you do not want the sample data to be loaded automatically
-    contexts: dev, faker
   mail:
     host: localhost
     port: 25
@@ -110,9 +92,6 @@ jhipster:
       host: localhost
       port: 5000
       queue-size: 512
-  audit-events:
-    retention-period: 30 # Number of days before audit events are deleted.
-
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class

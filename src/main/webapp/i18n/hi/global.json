@@ -26,7 +26,6 @@
         "health": "स्वास्थ्य",
         "configuration": "कॉन्फ़िगरेशन",
         "logs": "लॉग",
-        "audits": "आडिट",
         "apidocs": "API",
         "database": "डेटाबेस",
         "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"

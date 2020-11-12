@@ -76,7 +76,6 @@ public class CacheConfiguration {
 
         // Full reference is available at: https://docs.hazelcast.org/docs/management-center/3.9/manual/html/Deploying_and_Starting.html
         config.setManagementCenterConfig(initializeDefaultManagementCenterConfig(jHipsterProperties));
-        config.getMapConfigs().put("in.emithram.domain.*", initializeDomainMapConfig(jHipsterProperties));
         return Hazelcast.newHazelcastInstance(config);
     }
 
