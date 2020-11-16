@@ -6,13 +6,19 @@ import { DEBUG_INFO_ENABLED } from 'app/app.constants';
 import { Authority } from 'app/shared/constants/authority.constants';
 
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
+import { insuranceNavbarRoute } from './layouts/insurance-navbar/insurance-navbar.route';
 
-const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
+const LAYOUT_ROUTES = [navbarRoute, insuranceNavbarRoute, ...errorRoute];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(
       [
+        {
+          path: '',
+          redirectTo: 'motor-insurance',
+          pathMatch: 'full',
+        },
         {
           path: 'admin',
           data: {

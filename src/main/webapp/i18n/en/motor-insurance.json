@@ -1,0 +1,24 @@
+{
+  "redfin": {
+    "motor-insurance": {
+      "home": {
+        "title": "Insurances",
+        "createLabel": "Create a new Insurance",
+        "createOrEditLabel": "Create or edit a Insurance",
+        "notFound": "No Insurances found"
+      },
+      "created": "A new Insurance is created with identifier {{ param }}",
+      "updated": "A Insurance is updated with identifier {{ param }}",
+      "deleted": "A Insurance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Insurance {{ id }}?"
+      },
+      "detail": {
+        "title": "Insurance"
+      },
+      "rcBook": "Rc Book",
+      "policyType": "Policy Type",
+      "additionalCover": "Additional Cover"
+    }
+  }
+}
