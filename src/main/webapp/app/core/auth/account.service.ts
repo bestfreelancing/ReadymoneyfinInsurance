@@ -94,7 +94,7 @@ export class AccountService {
     const previousUrl = this.stateStorageService.getUrl();
     if (previousUrl) {
       this.stateStorageService.clearUrl();
-      this.router.navigateByUrl(previousUrl);
+      // this.router.navigateByUrl(previousUrl);
     }
   }
 }

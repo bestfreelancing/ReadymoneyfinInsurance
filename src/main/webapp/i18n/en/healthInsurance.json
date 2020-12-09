@@ -1,0 +1,36 @@
+{
+  "readymoneyfin": {
+    "healthInsurance": {
+      "home": {
+        "title": "Health Insurances",
+        "createLabel": "Apply for Health Insurance",
+        "createOrEditLabel": "Apply for Health Insurance",
+        "notFound": "No Health Insurances found"
+      },
+      "created": "A new Health Insurance is created with identifier {{ param }}",
+      "updated": "A Health Insurance is updated with identifier {{ param }}",
+      "deleted": "A Health Insurance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Health Insurance {{ id }}?"
+      },
+      "detail": {
+        "title": "Health Insurance"
+      },
+      "insuredName": "Insured Name",
+      "dateOfBirth": "Date of Birth",
+      "insuredAddress": "Insured Address",
+      "insuredPinCode": "Insured Pin Code",
+      "insuredPhone": "Insured Phone",
+      "insuredEmail": "Insured Email",
+      "insureAmount": "Insure Amount",
+      "adhar": "Adhar(Only upload scanned image or pdf)",
+      "insured": "Insured",
+      "married": "Married",
+      "sumInsured": "Sum Insured",
+      "gender": "Gender",
+      "anyoneSmokesInTheFamily": "Anyone Smokes In The Family",
+      "familyMember": "Family Member",
+      "documentUploader": "Document Uploader"
+    }
+  }
+}

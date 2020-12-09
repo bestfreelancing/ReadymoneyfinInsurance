@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +12,11 @@
     <link rel="icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.webapp" />
     <link rel="stylesheet" href="content/css/loading.css">
+    <script src="content/js/checkout.js"></script>
+    <!--<script src="https://checkout.razorpay.com/v1/checkout.js"></script>-->
     <!-- jhipster-needle-add-resources-to-root - JHipster will add new resources here -->
 </head>
+
 <body>
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -28,7 +32,7 @@
             <div id="jhipster-error" style="display:none">
                 <!-- This content is for troubleshooting purpose and will be removed when app renders -->
                 <h1>Something went wrong..please try again :-(</h1>
-        </div>
+            </div>
         </div>
     </jhi-main>
     <noscript>
@@ -36,7 +40,7 @@
     </noscript>
     <script type="text/javascript" language="javascript">
         // show an error message if the app loading takes more than 5 sec
-        window.onload=function() {
+        window.onload = function () {
             setTimeout(showError, 4000);
         }
         function showError() {
@@ -70,4 +74,5 @@
         ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>-->
 </body>
+
 </html>

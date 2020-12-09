@@ -1,7 +1,7 @@
 import { Route } from '@angular/router';
-import { MotorComponent } from './motor.component';
+import { MotorInsuranceComponent } from './motor-insurance.component';
 
 export const MOTOR_INSURANCE_ROUTE: Route = {
   path: 'motor-insurance',
-  component: MotorComponent,
+  component: MotorInsuranceComponent,
 };

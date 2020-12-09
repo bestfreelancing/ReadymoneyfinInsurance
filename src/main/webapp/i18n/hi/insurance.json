@@ -1,0 +1,24 @@
+{
+  "readymoneyfin": {
+    "insurance": {
+      "home": {
+        "title": "Insurances",
+        "createLabel": "नया Insurance बनाएँ",
+        "createOrEditLabel": "Insurance बनाएँ या संपादित करें",
+        "notFound": "No Insurances found"
+      },
+      "created": "एक नया Insurance [identifier: {{ param }}] तैयार है",
+      "updated": "एक Insurance [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Insurance [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Insurance [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Insurance"
+      },
+      "rcBook": "Rc Book",
+      "policyType": "Policy Type",
+      "additionalCover": "Additional Cover"
+    }
+  }
+}

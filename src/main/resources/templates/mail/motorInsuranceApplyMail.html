@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+<head>
+    <title th:text="#{motor-insurance.title}">Request For Motor Insurance</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" th:href="@{|${baseUrl}/favicon.ico|}" />
+</head>
+<body>
+
+<!--<img src="../static/images/logo.png" th:src="@{~/content/images/logo.png}"/>-->
+<h3 th:text="#{motor-insurance.title}">
+    Request for Motor Insurance
+</h3>
+<div th:object="${insurance}">
+<ul>
+    <li><span th:text="#{insured.name}+': '">Name of insured</span><span th:text="${insurance.insuredName}"></span></li>
+    <li><span th:text="#{insured.email}+': '">Email of insured</span><span th:text="*{insuredEmail}"></span></li>
+    <li><span th:text="#{insured.phone}+': '">Phone number of insured</span><span th:text="*{insuredPhone}"></span></li>
+    <li><span th:text="#{insured.address}+': '">Address of insured</span><span th:text="*{insuredAddress}"></span></li>
+    <li><span th:text="#{insured.pincode}+': '">Pin code of insured</span><span th:text="*{insuredPinCode}"></span></li><br>
+
+    <li><span th:text="#{motor-insurance.previous-year.claim-details}+': '">Previous year claim details</span><span th:text="*{previousYearClaimDetails}"></span></li>
+    <li><span th:text="#{motor-insurance.previous-year.any-claim}+': '">Any claim in last year?</span><span th:text="*{anyClaimInPreviousYear==true?'yes':'no'}"></span></li>
+    <li><span th:text="#{motor-insurance.previous-year.any-accident}+': '">Any accident in previous year?</span><span th:text="*{anyAccidentsInPreviousYear==true?'yes':'no'}"></span></li>
+    <li><span th:text="#{motor-insurance.previous-ncv}+': '">Previous Ncv</span><span th:text="*{previousNcv}"></span></li>
+    <li><span th:text="#{motor-insurance.current-ncv}+': '">Current Ncv</span><span th:text="*{currentNcv}"></span></li>
+    <li><span th:text="#{motor-insurance.make}+': '">Make</span><span th:text="*{make}"></span></li>
+    <li><span th:text="#{motor-insurance.model}+': '">Model</span><span th:text="*{model}"></span></li>
+    <li><span th:text="#{motor-insurance.sub-model}+': '">Sub model</span><span th:text="*{subModel}"></span></li>
+    <li><span th:text="#{motor-insurance.policy-cover}+': '">Policy Cover</span><span th:text="*{policyCoverage?.value}"></span></li>
+    <li><span th:text="#{motor-insurance.policy-cover}+': '">Additional cover needed</span><span th:text="*{additionalCoverNeeded?.value}"></span></li>
+    <li><span th:text="#{insure.amount}+': '">Insure Amount</span><span th:text="*{insureAmount}"></span></li>
+    <li><span th:text="#{insurance.paymentId}+': '">Payment Id</span><span th:text="*{razorpayVerification.paymentId}"></span></li>
+</ul>
+    <br>
+</div>
+<div th:object="${insurance.documentUploader}">
+<p th:text="*{'Contact document uploader- email: '+email+', phone number: '+phone+', office Id: '+officeId}">
+</p>
+</div>
+
+<p>
+    <span th:text="#{email.reset.text2}">Regards, </span>
+    <br/>
+    <em th:text="#{email.signature}">Emithram.
+    </em>
+</p>
+</body>
+</html>

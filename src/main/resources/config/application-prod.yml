@@ -32,10 +32,15 @@ spring:
     livereload:
       enabled: false
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    host: smtp.gmail.com
+    port: 587
+    username: sanilkumar.onlinework1@gmail.com
+    password: ivfsbdascgbrijcr
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
   thymeleaf:
     cache: true
 
@@ -59,7 +64,7 @@ spring:
 #     ciphers: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256,TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 ,TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 ,TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256,TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384,TLS_DHE_RSA_WITH_AES_128_CBC_SHA256,TLS_DHE_RSA_WITH_AES_128_CBC_SHA,TLS_DHE_RSA_WITH_AES_256_CBC_SHA256,TLS_DHE_RSA_WITH_AES_256_CBC_SHA,TLS_RSA_WITH_AES_128_GCM_SHA256,TLS_RSA_WITH_AES_256_GCM_SHA384,TLS_RSA_WITH_AES_128_CBC_SHA256,TLS_RSA_WITH_AES_256_CBC_SHA256,TLS_RSA_WITH_AES_128_CBC_SHA,TLS_RSA_WITH_AES_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_RSA_WITH_CAMELLIA_256_CBC_SHA,TLS_DHE_RSA_WITH_CAMELLIA_128_CBC_SHA,TLS_RSA_WITH_CAMELLIA_128_CBC_SHA
 # ===================================================================
 server:
-  port: 8080
+  port: 8082
   compression:
     enabled: true
     mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
@@ -108,6 +113,10 @@ jhipster:
       host: localhost
       port: 5000
       queue-size: 512
+payment:
+  razorpay:
+    key: rzp_test_fnBfiEz5tZiSS1
+    secret: NUGiZPUXjdhfNCMVMD87Yfaq
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class
@@ -118,3 +127,10 @@ jhipster:
 # ===================================================================
 
 # application:
+application:
+  insurance:
+    recipients: sanilkumarp001@gmail.com, sanilkumar.onlinework@gmail.com
+    health-insurance:
+      template: mail/healthInsuranceApplyMail
+    motor-insurance:
+      template: mail/motorInsuranceApplyMail

@@ -1,0 +1,24 @@
+{
+  "readymoneyfin": {
+    "documentUploader": {
+      "home": {
+        "title": "DocumentUploaders",
+        "createLabel": "नया Document Uploader बनाएँ",
+        "createOrEditLabel": "Document Uploader बनाएँ या संपादित करें",
+        "notFound": "No Document Uploaders found"
+      },
+      "created": "एक नया Document Uploader [identifier: {{ param }}] तैयार है",
+      "updated": "एक Document Uploader [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Document Uploader [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Document Uploader [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Document Uploader"
+      },
+      "email": "Email",
+      "phone": "Phone",
+      "officeId": "Office Id"
+    }
+  }
+}

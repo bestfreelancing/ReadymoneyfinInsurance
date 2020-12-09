@@ -1,0 +1,24 @@
+{
+  "readymoneyfin": {
+    "documentUploader": {
+      "home": {
+        "title": "Document Uploaders",
+        "createLabel": "Create a new Document Uploader",
+        "createOrEditLabel": "Create or edit a Document Uploader",
+        "notFound": "No Document Uploaders found"
+      },
+      "created": "A new Document Uploader is created with identifier {{ param }}",
+      "updated": "A Document Uploader is updated with identifier {{ param }}",
+      "deleted": "A Document Uploader is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Document Uploader {{ id }}?"
+      },
+      "detail": {
+        "title": "Document Uploader"
+      },
+      "email": "Uploader's Email",
+      "phone": "Uploder's Phone number",
+      "officeId": "Office Id"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "readymoneyfin": {
+    "motorInsurance": {
+      "home": {
+        "title": "MotorInsurances",
+        "createLabel": "नया Motor Insurance बनाएँ",
+        "createOrEditLabel": "Motor Insurance बनाएँ या संपादित करें",
+        "notFound": "No Motor Insurances found"
+      },
+      "created": "एक नया Motor Insurance [identifier: {{ param }}] तैयार है",
+      "updated": "एक Motor Insurance [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Motor Insurance [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Motor Insurance [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Motor Insurance"
+      },
+      "insuredName": "Insured Name",
+      "insuredAddress": "Insured Address",
+      "insuredPinCode": "Insured Pin Code",
+      "insuredPhone": "Insured Phone",
+      "insuredEmail": "Insured Email",
+      "insureAmount": "Insure Amount",
+      "rcBook": "Rc Book",
+      "insurance": "Insurance",
+      "previousYearClaimDetails": "Previous Year Claim Details",
+      "anyClaimInPreviousYear": "Any Claim In Previous Year",
+      "anyAccidentsInPreviousYear": "Any Accidents In Previous Year",
+      "previousNcv": "Previous Ncv",
+      "currentNcv": "Current Ncv",
+      "make": "Make",
+      "model": "Model",
+      "subModel": "Sub Model",
+      "policyCoverage": "Policy Coverage",
+      "additionalCoverNeeded": "Additional Cover Needed",
+      "documentUploader": "Document Uploader"
+    }
+  }
+}

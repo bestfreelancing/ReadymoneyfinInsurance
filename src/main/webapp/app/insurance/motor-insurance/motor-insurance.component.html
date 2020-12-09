@@ -1,0 +1,423 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-xl-8 col-lg-10 col-md-12 col-sm-12">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-motor-insurance-heading" jhiTranslate="readymoneyfin.motorInsurance.home.createOrEditLabel">
+                Apply
+                for Motor Insurance</h2>
+
+            <div>
+                <div class="form-group" formGroupName="documentUploader">
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="readymoneyfin.documentUploader.phone"
+                            for="field_insuredPhone">Uploader's Phone Number</label>
+                        <input type="text" class="form-control" name="insuredPhone" id="field_documentUploader_phone"
+                            formControlName="phone" />
+                        <div
+                            *ngIf="documentUploader?.get('phone')!.invalid && (documentUploader?.get('phone')!.dirty || documentUploader?.get('phone')!.touched)">
+                            <small class="form-text text-danger"
+                                *ngIf="documentUploader?.get('phone')?.errors?.required"
+                                jhiTranslate="entity.validation.required">
+                                This field is required.
+                            </small>
+                            <small class="form-text text-danger" *ngIf="documentUploader?.get('phone')?.errors?.pattern"
+                                jhiTranslate="entity.validation.pattern"
+                                [translateValues]="{ pattern: 'Phone number' }">
+                                This field should follow pattern for "Phone number".
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="readymoneyfin.documentUploader.email"
+                            for="field_documentUploader_email">Uploader's Email</label>
+                        <input type="text" class="form-control" name="email" id="field_documentUploader_email"
+                            formControlName="email" />
+                        <div
+                            *ngIf="documentUploader?.get('email')!.invalid && (documentUploader?.get('email')!.dirty || documentUploader?.get('email')!.touched)">
+                            <small class="form-text text-danger"
+                                *ngIf="documentUploader?.get('email')?.errors?.required"
+                                jhiTranslate="entity.validation.required">
+                                This field is required.
+                            </small>
+                            <small class="form-text text-danger" *ngIf="documentUploader?.get('email')?.errors?.pattern"
+                                jhiTranslate="entity.validation.pattern"
+                                [translateValues]="{ pattern: 'Insured Email' }">
+                                This field should follow pattern for "Insured Email".
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-control-label" jhiTranslate="readymoneyfin.documentUploader.officeId"
+                            for="field_documentUploader_officeId">Office Id</label>
+                        <input type="text" class="form-control" name="officeId" id="field_documentUploader_officeId"
+                            formControlName="officeId" />
+                        <div
+                            *ngIf="documentUploader?.get('officeId')!.invalid && (documentUploader?.get('officeId')!.dirty || documentUploader?.get('officeId')!.touched)">
+                            <small class="form-text text-danger"
+                                *ngIf="documentUploader?.get('officeId')?.errors?.required"
+                                jhiTranslate="entity.validation.required">
+                                This field is required.
+                            </small>
+                            <small class="form-text text-danger"
+                                *ngIf="documentUploader?.get('officeId')?.errors?.pattern"
+                                jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Email' }">
+                                This field should follow pattern for "Email".
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.insuredName"
+                        for="field_insuredName">Insured Name</label>
+                    <input type="text" class="form-control" name="insuredName" id="field_insuredName"
+                        formControlName="insuredName" />
+                    <div
+                        *ngIf="editForm.get('insuredName')!.invalid && (editForm.get('insuredName')!.dirty || editForm.get('insuredName')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('insuredName')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.insuredAddress"
+                        for="field_insuredAddress">Insured Address</label>
+                    <input type="text" class="form-control" name="insuredAddress" id="field_insuredAddress"
+                        formControlName="insuredAddress" />
+                    <div
+                        *ngIf="editForm.get('insuredAddress')!.invalid && (editForm.get('insuredAddress')!.dirty || editForm.get('insuredAddress')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('insuredAddress')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.insuredPinCode"
+                        for="field_insuredPinCode">Insured Pin Code</label>
+                    <input type="text" class="form-control" name="insuredPinCode" id="field_insuredPinCode"
+                        formControlName="insuredPinCode" />
+                    <div
+                        *ngIf="editForm.get('insuredPinCode')!.invalid && (editForm.get('insuredPinCode')!.dirty || editForm.get('insuredPinCode')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('insuredPinCode')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="editForm.get('insuredPinCode')?.errors?.pattern"
+                            jhiTranslate="entity.validation.pattern"
+                            [translateValues]="{ pattern: 'Insured Pin Code' }">
+                            This field should follow pattern for "Insured Pin Code".
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.insuredPhone"
+                        for="field_insuredPhone">Insured Phone</label>
+                    <input type="text" class="form-control" name="insuredPhone" id="field_insuredPhone"
+                        formControlName="insuredPhone" />
+                    <div
+                        *ngIf="editForm.get('insuredPhone')!.invalid && (editForm.get('insuredPhone')!.dirty || editForm.get('insuredPhone')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('insuredPhone')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="editForm.get('insuredPhone')?.errors?.pattern"
+                            jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Insured Phone' }">
+                            This field should follow pattern for "Insured Phone".
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.insuredEmail"
+                        for="field_insuredEmail">Insured Email</label>
+                    <input type="text" class="form-control" name="insuredEmail" id="field_insuredEmail"
+                        formControlName="insuredEmail" />
+                    <div
+                        *ngIf="editForm.get('insuredEmail')!.invalid && (editForm.get('insuredEmail')!.dirty || editForm.get('insuredEmail')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('insuredEmail')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="editForm.get('insuredEmail')?.errors?.pattern"
+                            jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Insured Email' }">
+                            This field should follow pattern for "Insured Email".
+                        </small>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.rcBook"
+                        for="field_rcBook">Rc Book(Only upload scanned image or pdf)</label>
+                    <div>
+                        <div *ngIf="editForm.get('rcBook')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left"
+                                (click)="openFile(editForm.get('rcBookContentType')!.value, editForm.get('rcBook')!.value)"
+                                jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('rcBookContentType')!.value }},
+                                {{ byteSize(editForm.get('rcBook')!.value) }}</span>
+                            <button type="button"
+                                (click)="editForm.patchValue({rcBook: null});editForm.patchValue({rcBookContentType: null});"
+                                class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_rcBook" (change)="setFileData($event, 'rcBook', false)"
+                            jhiTranslate="entity.action.addblob" accept=".jpg,.jpeg,.pdf,.png" />
+                    </div>
+                    <input type="hidden" class="form-control" name="rcBook" id="field_rcBook"
+                        formControlName="rcBook" />
+                    <input type="hidden" class="form-control" name="rcBookContentType" id="field_rcBookContentType"
+                        formControlName="rcBookContentType" />
+                    <div
+                        *ngIf="editForm.get('rcBook')!.invalid && (editForm.get('rcBook')!.dirty || editForm.get('rcBook')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('rcBook')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.insurance"
+                        for="field_insurance">Insurance(Only upload scanned image or pdf)</label>
+                    <div>
+                        <div *ngIf="editForm.get('insurance')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left"
+                                (click)="openFile(editForm.get('insuranceContentType')!.value, editForm.get('insurance')!.value)"
+                                jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('insuranceContentType')!.value }},
+                                {{ byteSize(editForm.get('insurance')!.value) }}</span>
+                            <button type="button"
+                                (click)="editForm.patchValue({insurance: null});editForm.patchValue({insuranceContentType: null});"
+                                class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_insurance" (change)="setFileData($event, 'insurance', false)"
+                            jhiTranslate="entity.action.addblob" accept=".jpg,.jpeg,.pdf,.png" />
+                    </div>
+                    <input type="hidden" class="form-control" name="insurance" id="field_insurance"
+                        formControlName="insurance" />
+                    <input type="hidden" class="form-control" name="insuranceContentType"
+                        id="field_insuranceContentType" formControlName="insuranceContentType" />
+                    <div
+                        *ngIf="editForm.get('insurance')!.invalid && (editForm.get('insurance')!.dirty || editForm.get('insurance')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('insurance')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label"
+                        jhiTranslate="readymoneyfin.motorInsurance.previousYearClaimDetails"
+                        for="field_previousYearClaimDetails">Previous Year Claim Details</label>
+                    <textarea class="form-control" name="previousYearClaimDetails" id="field_previousYearClaimDetails"
+                        formControlName="previousYearClaimDetails"></textarea>
+                    <div
+                        *ngIf="editForm.get('previousYearClaimDetails')!.invalid && (editForm.get('previousYearClaimDetails')!.dirty || editForm.get('previousYearClaimDetails')!.touched)">
+                        <small class="form-text text-danger"
+                            *ngIf="editForm.get('previousYearClaimDetails')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.anyClaimInPreviousYear"
+                        for="field_anyClaimInPreviousYear">Any Claim In Previous Year</label>
+                    <input type="checkbox" class="form-control" name="anyClaimInPreviousYear"
+                        id="field_anyClaimInPreviousYear" formControlName="anyClaimInPreviousYear"
+                        (change)="calculateCurrentNcb()" />
+                    <div
+                        *ngIf="editForm.get('anyClaimInPreviousYear')!.invalid && (editForm.get('anyClaimInPreviousYear')!.dirty || editForm.get('anyClaimInPreviousYear')!.touched)">
+                        <small class="form-text text-danger"
+                            *ngIf="editForm.get('anyClaimInPreviousYear')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label"
+                        jhiTranslate="readymoneyfin.motorInsurance.anyAccidentsInPreviousYear"
+                        for="field_anyAccidentsInPreviousYear">Any Accidents In Previous Year</label>
+                    <input type="checkbox" class="form-control" name="anyAccidentsInPreviousYear"
+                        id="field_anyAccidentsInPreviousYear" formControlName="anyAccidentsInPreviousYear" />
+                    <div
+                        *ngIf="editForm.get('anyAccidentsInPreviousYear')!.invalid && (editForm.get('anyAccidentsInPreviousYear')!.dirty || editForm.get('anyAccidentsInPreviousYear')!.touched)">
+                        <small class="form-text text-danger"
+                            *ngIf="editForm.get('anyAccidentsInPreviousYear')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_previousNcb">Previous
+                        Ncb</label>
+                    <select class="form-control" name="previousNcb" formControlName="previousNcb" id="field_previousNcb"
+                        (change)="calculateCurrentNcb()">
+                        <option [value]="ncb" *ngFor="let ncb of ncbSlabs">{{ ncb }}</option>
+                    </select>
+                    <div
+                        *ngIf="editForm.get('previousNcb')!.invalid && (editForm.get('previousNcb')!.dirty || editForm.get('previousNcb')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('previousNcb')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                        <small class="form-text text-danger" [hidden]="!editForm.get('previousNcb')?.errors?.number"
+                            jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group" hidden>
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.currentNcb"
+                        for="field_currentNcb">Current Ncb</label>
+                    <input type="number" hidden class="form-control" name="currentNcb" formControlName="currentNcb"
+                        id="field_previousNcb" readonly>
+                    <div
+                        *ngIf="editForm.get('currentNcb')!.invalid && (editForm.get('currentNcb')!.dirty || editForm.get('currentNcb')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('currentNcb')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                        <small class="form-text text-danger" [hidden]="!editForm.get('currentNcb')?.errors?.number"
+                            jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.make"
+                        for="field_make">Make</label>
+                    <input type="text" class="form-control" name="make" id="field_make" formControlName="make" />
+                    <div
+                        *ngIf="editForm.get('make')!.invalid && (editForm.get('make')!.dirty || editForm.get('make')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('make')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.model"
+                        for="field_model">Model</label>
+                    <input type="text" class="form-control" name="model" id="field_model" formControlName="model" />
+                    <div
+                        *ngIf="editForm.get('model')!.invalid && (editForm.get('model')!.dirty || editForm.get('model')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('model')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.subModel"
+                        for="field_subModel">Sub Model</label>
+                    <input type="text" class="form-control" name="subModel" id="field_subModel"
+                        formControlName="subModel" />
+                    <div
+                        *ngIf="editForm.get('subModel')!.invalid && (editForm.get('subModel')!.dirty || editForm.get('subModel')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('subModel')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.policyCoverage"
+                        for="field_policyCoverage">Policy Coverage</label>
+                    <select class="form-control" name="policyCoverage" formControlName="policyCoverage"
+                        id="field_policyCoverage">
+                        <option value="THIRD_PARTY">{{ 'readymoneyfin.MotorPolicyCoverage.THIRD_PARTY' | translate }}
+                        </option>
+                        <option value="BUMPER_TO_BUMPER">
+                            {{ 'readymoneyfin.MotorPolicyCoverage.BUMPER_TO_BUMPER' | translate }}</option>
+                        <option value="FULL_COVER">{{ 'readymoneyfin.MotorPolicyCoverage.FULL_COVER' | translate }}
+                        </option>
+                    </select>
+                    <div
+                        *ngIf="editForm.get('policyCoverage')!.invalid && (editForm.get('policyCoverage')!.dirty || editForm.get('policyCoverage')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('policyCoverage')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.additionalCoverNeeded"
+                        for="field_additionalCoverNeeded">Additional Cover Needed</label>
+                    <select class="form-control" name="additionalCoverNeeded" formControlName="additionalCoverNeeded"
+                        id="field_additionalCoverNeeded">
+                        <option value="HIGHWAY_ASSISTANCE">
+                            {{ 'readymoneyfin.MotorAdditionalCover.HIGHWAY_ASSISTANCE' | translate }}</option>
+                        <option value="ENGINE_PROTECTION">
+                            {{ 'readymoneyfin.MotorAdditionalCover.ENGINE_PROTECTION' | translate }}</option>
+                        <option value="OTHER">
+                            {{ 'readymoneyfin.MotorAdditionalCover.OTHER' | translate }}</option>
+                    </select>
+                    <div
+                        *ngIf="editForm.get('additionalCoverNeeded')!.invalid && (editForm.get('additionalCoverNeeded')!.dirty || editForm.get('additionalCoverNeeded')!.touched)">
+                        <small class="form-text text-danger"
+                            *ngIf="editForm.get('additionalCoverNeeded')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.insureAmount"
+                        for="field_insureAmount">Insure Amount</label>
+                    <input type="text" class="form-control" name="insureAmount" id="field_insureAmount"
+                        formControlName="insureAmount" />
+                    <div
+                        *ngIf="editForm.get('insureAmount')!.invalid && (editForm.get('insureAmount')!.dirty || editForm.get('insureAmount')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('insureAmount')?.errors?.pattern"
+                            jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Insure Amount' }">
+                            This field should follow pattern for "Insure Amount".
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving"
+                    class="btn btn-primary">
+                    <fa-icon icon="money-bill"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Proceed to
+                        Pay</span>
+                </button>
+            </div>
+        </form>
+        <jhi-alert-error></jhi-alert-error>
+        <jhi-alert></jhi-alert>
+    </div>
+</div>

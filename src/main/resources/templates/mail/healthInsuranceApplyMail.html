@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+<head>
+    <title th:text="#{health-insurance.title}">Request For health Insurance</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" th:href="@{|${baseUrl}/favicon.ico|}" />
+</head>
+<body>
+
+<!--<img src="../../static/images/logo.png" th:src="@{~/content/images/logo.png}"/>-->
+<h3 th:text="#{health-insurance.title}">
+    Request for health Insurance
+</h3>
+<div th:object="${insurance}">
+    <ul>
+        <li><span th:text="#{insured.name}+': '">Name of insured</span><span th:text="${insurance.insuredName}"></span></li>
+        <li><span th:text="#{insured.email}+': '">Email of insured</span><span th:text="*{insuredEmail}"></span></li>
+        <li><span th:text="#{insured.phone}+': '">Phone number of insured</span><span th:text="*{insuredPhone}"></span></li>
+        <li><span th:text="#{insured.address}+': '">Address of insured</span><span th:text="*{insuredAddress}"></span></li>
+        <li><span th:text="#{insured.pincode}+': '">Pin code of insured</span><span th:text="*{insuredPinCode}"></span></li><br>
+
+        <li><span th:text="#{health-insurance.insured}+': '">Insured</span><span th:text="*{insured.value}"></span></li>
+        <li><span th:text="#{health-insurance.dob}+': '">Date of Birth</span><span th:text="*{dateOfBirth}"></span></li>
+        <li><span th:text="#{health-insurance.gender}+': '">Gender</span><span th:text="*{gender.value}"></span></li>
+        <li><span th:text="#{health-insurance.married}+': '">Marital Status</span><span th:text="*{married==true?'Married':'Not Married'}"></span></li>
+        <li><span th:text="#{health-insurance.sum-insured}+': '">Sum Insured</span><span th:text="*{sumInsured.value}"></span></li>
+        <li><span th:text="#{health-insurance.smoking}+': '">Make</span><span th:text="*{anyoneSmokesInTheFamily==true?'Yes':'No'}"></span></li>
+        <li><span th:text="#{insure.amount}+': '">Insure Amount</span><span th:text="*{insureAmount}"></span></li>
+        <li><span th:text="#{insurance.paymentId}+': '">Payment Id</span><span th:text="*{razorpayVerification.paymentId}"></span></li>
+    </ul>
+    <br>
+    <h4 th:if="${#lists.size(insurance.familyMembers) > 0}" th:text="#{health-insurance.family-members}">Family Members</h4>
+    <ul th:each="member: *{familyMembers}">
+        <li><span th:text="#{health-insurance.relation}+': '">Relation</span><span th:text="${member.relation.value}"></span></li>
+        <li><span th:text="#{health-insurance.dob}+': '">Date of Birth</span><span th:text="${member.dateOfBirth}"></span></li>
+        <br>
+    </ul>
+    <br>
+</div>
+<div th:object="${insurance.documentUploader}">
+    <p th:text="*{'Contact document uploader- email: '+email+', phone number: '+phone+', office Id: '+officeId}">
+    </p>
+</div>
+
+<p>
+    <span th:text="#{email.reset.text2}">Regards, </span>
+    <br/>
+    <em th:text="#{email.signature}">Emithram.
+    </em>
+</p>
+</body>
+</html>

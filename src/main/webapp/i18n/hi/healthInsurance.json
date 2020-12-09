@@ -1,0 +1,36 @@
+{
+  "readymoneyfin": {
+    "healthInsurance": {
+      "home": {
+        "title": "HealthInsurances",
+        "createLabel": "नया Health Insurance बनाएँ",
+        "createOrEditLabel": "Health Insurance बनाएँ या संपादित करें",
+        "notFound": "No Health Insurances found"
+      },
+      "created": "एक नया Health Insurance [identifier: {{ param }}] तैयार है",
+      "updated": "एक Health Insurance [identifier: {{ param }}] का अद्यतन हुआ है",
+      "deleted": "Health Insurance [identifier: {{ param }}] हटा दिया है",
+      "delete": {
+        "question": "Health Insurance [id: {{ id }}] हटाने की पुष्टि करें"
+      },
+      "detail": {
+        "title": "Health Insurance"
+      },
+      "insuredName": "Insured Name",
+      "dateOfBirth": "Date of Birth",
+      "insuredAddress": "Insured Address",
+      "insuredPinCode": "Insured Pin Code",
+      "insuredPhone": "Insured Phone",
+      "insuredEmail": "Insured Email",
+      "insureAmount": "Insure Amount",
+      "adhar": "Adhar",
+      "insured": "Insured",
+      "married": "Married",
+      "sumInsured": "Sum Insured",
+      "gender": "Gender",
+      "anyoneSmokesInTheFamily": "Anyone Smokes In The Family",
+      "familyMember": "Family Member",
+      "documentUploader": "Document Uploader"
+    }
+  }
+}

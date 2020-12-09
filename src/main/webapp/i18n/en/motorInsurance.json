@@ -1,0 +1,40 @@
+{
+  "readymoneyfin": {
+    "motorInsurance": {
+      "home": {
+        "title": "Motor Insurances",
+        "createLabel": "Apply for Motor Insurance",
+        "createOrEditLabel": "Apply for Motor Insurance",
+        "notFound": "No Motor Insurances found"
+      },
+      "created": "A new Motor Insurance is created with identifier {{ param }}",
+      "updated": "A Motor Insurance is updated with identifier {{ param }}",
+      "deleted": "A Motor Insurance is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Motor Insurance {{ id }}?"
+      },
+      "detail": {
+        "title": "Motor Insurance"
+      },
+      "insuredName": "Insured Name",
+      "insuredAddress": "Insured Address",
+      "insuredPinCode": "Insured Pin Code",
+      "insuredPhone": "Insured Phone",
+      "insuredEmail": "Insured Email",
+      "insureAmount": "Insure Amount",
+      "rcBook": "Rc Book(Only upload scanned image or pdf)",
+      "insurance": "Insurance(Only upload scanned image or pdf)",
+      "previousYearClaimDetails": "Previous Year Claim Details",
+      "anyClaimInPreviousYear": "Any Claim In Previous Year",
+      "anyAccidentsInPreviousYear": "Any Accidents In Previous Year",
+      "previousNcv": "Previous Ncv",
+      "currentNcv": "Current Ncv",
+      "make": "Make",
+      "model": "Model",
+      "subModel": "Sub Model",
+      "policyCoverage": "Policy Coverage",
+      "additionalCoverNeeded": "Additional Cover Needed",
+      "documentUploader": "Document Uploader"
+    }
+  }
+}

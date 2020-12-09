@@ -1,0 +1,10 @@
+{
+  "readymoneyfin": {
+    "MotorAdditionalCover": {
+      "null": "",
+      "HIGHWAY_ASSISTANCE": "Highway Assistance",
+      "ENGINE_PROTECTION": "Engine Protection",
+      "OTHER": "Other"
+    }
+  }
+}

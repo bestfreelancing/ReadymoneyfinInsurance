@@ -96,7 +96,7 @@
       "delete": "Delete",
       "edit": "Edit",
       "open": "Open",
-      "save": "Save",
+      "save": "Proceed to Pay",
       "view": "View"
     },
     "detail": {
@@ -135,5 +135,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "This is your footer"
+  "footer": "&copy; Copyright 2020 TheBestFreelancing"
 }
