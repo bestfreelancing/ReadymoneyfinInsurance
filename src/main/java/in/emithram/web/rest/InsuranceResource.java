@@ -53,14 +53,14 @@ public class InsuranceResource {
 
         logger.debug("New application for motor insurance {}", motorInsurance);
 
-        if(razorpayPaymentService.verifyPayment(motorInsurance.getRazorpayVerification())!=true) {
+        if(motorInsurance.getRazorpayVerification()!= null && razorpayPaymentService.verifyPayment(motorInsurance.getRazorpayVerification())!=true) {
             throw new PaymentVerificationFailedException("Payment verification failed","readymoneyfin","Signature not matched");
         }
 
         this.motorInsuranceMailService.sendMail(motorInsurance);
 
         return ResponseEntity.created(new URI("/insurance/motor/" + motorInsurance.getInsuredEmail()))
-            .headers(HeaderUtil.createEntityCreationAlert("readymoneyfin", true, "motorInsurance", motorInsurance.getModel()))
+            .headers(HeaderUtil.createEntityCreationAlert("readymoneyfin", true, "motorInsurance", motorInsurance.getMake()+" "+motorInsurance.getModel()))
             .body(motorInsurance);
     }
 
@@ -69,14 +69,14 @@ public class InsuranceResource {
 
         logger.debug("New application for health insurance {}", healthInsurance);
 
-        if(razorpayPaymentService.verifyPayment(healthInsurance.getRazorpayVerification())!=true) {
+        if(healthInsurance.getRazorpayVerification() != null && razorpayPaymentService.verifyPayment(healthInsurance.getRazorpayVerification())!=true) {
             throw new PaymentVerificationFailedException("Payment verification failed","readymoneyfin","Signature not matched");
         }
 
         this.healthInsuranceMailService.sendMail(healthInsurance);
 
         return ResponseEntity.created(new URI("/insurance/motor/" + healthInsurance.getInsuredEmail()))
-            .headers(HeaderUtil.createEntityCreationAlert("readymoneyfin", true, "healthInsurance", healthInsurance.getInsuredEmail()))
+            .headers(HeaderUtil.createEntityCreationAlert("readymoneyfin", true, "healthInsurance", healthInsurance.getInsuredName()))
             .body(healthInsurance);
     }
 

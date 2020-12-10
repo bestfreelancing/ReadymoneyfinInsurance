@@ -47,19 +47,19 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-control-label" jhiTranslate="readymoneyfin.documentUploader.officeId"
-                            for="field_documentUploader_officeId">Office Id</label>
-                        <input type="text" class="form-control" name="officeId" id="field_documentUploader_officeId"
-                            formControlName="officeId" />
+                        <label class="form-control-label" jhiTranslate="readymoneyfin.documentUploader.centerId"
+                            for="field_documentUploader_centerId">Center Id</label>
+                        <input type="text" class="form-control" name="centerId" id="field_documentUploader_centerId"
+                            formControlName="centerId" />
                         <div
-                            *ngIf="documentUploader?.get('officeId')!.invalid && (documentUploader?.get('officeId')!.dirty || documentUploader?.get('officeId')!.touched)">
+                            *ngIf="documentUploader?.get('centerId')!.invalid && (documentUploader?.get('centerId')!.dirty || documentUploader?.get('centerId')!.touched)">
                             <small class="form-text text-danger"
-                                *ngIf="documentUploader?.get('officeId')?.errors?.required"
+                                *ngIf="documentUploader?.get('centerId')?.errors?.required"
                                 jhiTranslate="entity.validation.required">
                                 This field is required.
                             </small>
                             <small class="form-text text-danger"
-                                *ngIf="documentUploader?.get('officeId')?.errors?.pattern"
+                                *ngIf="documentUploader?.get('centerId')?.errors?.pattern"
                                 jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Email' }">
                                 This field should follow pattern for "Email".
                             </small>
@@ -254,6 +254,37 @@
                         </small>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.healthInsurance.anyPreExistingIllness"
+                        for="field_anyPreExistingIllness">Any Pre existing illness or medication which has been carried
+                        out</label>
+                    <input type="checkbox" class="form-control" name="anyPreExistingIllness"
+                        id="field_anyPreExistingIllness" formControlName="anyPreExistingIllness" />
+                    <div
+                        *ngIf="editForm.get('anyPreExistingIllness')!.invalid && (editForm.get('anyPreExistingIllness')!.dirty || editForm.get('anyPreExistingIllness')!.touched)">
+                        <small class="form-text text-danger"
+                            *ngIf="editForm.get('anyPreExistingIllness')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group" *ngIf="editForm.get('anyPreExistingIllness')!.value == true">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.healthInsurance.illnessDetails"
+                        for="field_illnessDetails">Illness or medication details</label>
+                    <textarea class="form-control" name="illnessDetails" id="field_illnessDetails"
+                        formControlName="illnessDetails"></textarea>
+                    <div
+                        *ngIf="editForm.get('illnessDetails')!.invalid && (editForm.get('illnessDetails')!.dirty || editForm.get('illnessDetails')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('illnessDetails')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
                 <div formArrayName="familyMembers" *ngFor="let control of familyMembers?.controls; let i = index">
                     <div class="form-group form-row" formGroupName={{i}}>
                         <div class="form-group col">
@@ -351,6 +382,20 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.healthInsurance.paymentCompleted"
+                        for="field_paymentCompleted">Do you want to pay now?</label>
+                    <input type="checkbox" class="form-control" name="paymentCompleted" id="field_paymentCompleted"
+                        formControlName="paymentCompleted" />
+                    <div
+                        *ngIf="editForm.get('paymentCompleted')!.invalid && (editForm.get('paymentCompleted')!.dirty || editForm.get('paymentCompleted')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('paymentCompleted')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group" *ngIf="editForm.get('paymentCompleted')!.value == true">
                     <label class="form-control-label" jhiTranslate="readymoneyfin.healthInsurance.insureAmount"
                         for="field_insureAmount">Insure Amount</label>
                     <input type="text" class="form-control" name="insureAmount" id="field_insureAmount"

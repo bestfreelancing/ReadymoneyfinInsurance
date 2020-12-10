@@ -7,7 +7,7 @@
         "createOrEditLabel": "Apply for Health Insurance",
         "notFound": "No Health Insurances found"
       },
-      "created": "A new Health Insurance is created with identifier {{ param }}",
+      "created": "New application for person {{ param }} is submitted succesfully",
       "updated": "A Health Insurance is updated with identifier {{ param }}",
       "deleted": "A Health Insurance is deleted with identifier {{ param }}",
       "delete": {
@@ -30,7 +30,10 @@
       "gender": "Gender",
       "anyoneSmokesInTheFamily": "Anyone Smokes In The Family",
       "familyMember": "Family Member",
-      "documentUploader": "Document Uploader"
+      "documentUploader": "Document Uploader",
+      "paymentCompleted": "Do you want to pay now?",
+      "anyPreExistingIllness": "Any Pre existing illness or medication which has been carried out",
+      "illnessDetails": "Illness or medication details"
     }
   }
 }

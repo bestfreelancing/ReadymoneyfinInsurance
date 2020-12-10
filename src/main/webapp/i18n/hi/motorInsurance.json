@@ -27,14 +27,15 @@
       "previousYearClaimDetails": "Previous Year Claim Details",
       "anyClaimInPreviousYear": "Any Claim In Previous Year",
       "anyAccidentsInPreviousYear": "Any Accidents In Previous Year",
-      "previousNcv": "Previous Ncv",
-      "currentNcv": "Current Ncv",
+      "previousNcb": "Previous Ncb",
+      "currentNcb": "Current Ncb",
       "make": "Make",
       "model": "Model",
       "subModel": "Sub Model",
       "policyCoverage": "Policy Coverage",
       "additionalCoverNeeded": "Additional Cover Needed",
-      "documentUploader": "Document Uploader"
+      "documentUploader": "Document Uploader",
+      "paymentCompleted": "Do you want to pay now?"
     }
   }
 }

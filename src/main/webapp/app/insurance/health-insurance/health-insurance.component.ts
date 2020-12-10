@@ -33,7 +33,7 @@ export class HealthInsuranceComponent implements OnInit {
     insuredPinCode: [null, [Validators.required, Validators.pattern('^[0-9]{6}$')]],
     insuredPhone: [null, [Validators.required, Validators.pattern('^[6789][0-9]{9}$')]],
     insuredEmail: [null, [Validators.required, Validators.pattern('^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})$')]],
-    insureAmount: [null, [Validators.required, Validators.pattern('^[0-9]+\\.?[0-9]+$')]],
+    insureAmount: [null, [Validators.pattern('^[0-9]+\\.?[0-9]+$')]],
     adhar: [null, [Validators.required]],
     adharContentType: [],
     insured: [null, [Validators.required]],
@@ -44,9 +44,12 @@ export class HealthInsuranceComponent implements OnInit {
     documentUploader: this.fb.group({
       email: [null, [Validators.required, Validators.pattern('^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})$')]],
       phone: [null, [Validators.required, Validators.pattern('^[6789][0-9]{9}$')]],
-      officeId: [null, [Validators.required]],
+      centerId: [null, [Validators.required]],
     }),
     familyMembers: this.fb.array([]),
+    paymentCompleted: [false, [Validators.required]],
+    anyPreExistingIllness: [false, [Validators.required]],
+    illnessDetails: [null],
   });
 
   constructor(
@@ -93,12 +96,19 @@ export class HealthInsuranceComponent implements OnInit {
 
   save(): void {
     this.isSaving = true;
-    this.subscribeToPaymentInitiateResponse(
-      this.insuranceService.getOrderIdUsingGET(
-        this.editForm.get('insureAmount')!.value * 100 + '',
-        'receipt_' + this.editForm.get('insuredPhone')!.value
-      )
-    );
+    if (this.editForm.get('paymentCompleted')!.value === true) {
+      this.subscribeToPaymentInitiateResponse(
+        this.insuranceService.getOrderIdUsingGET(
+          this.editForm.get('insureAmount')!.value * 100 + '',
+          'receipt_' + this.editForm.get('insuredPhone')!.value
+        )
+      );
+    } else {
+      const healthInsurance = this.createFromForm();
+      // eslint-disable-next-line no-console
+      console.log('Health insurance to be saved', healthInsurance);
+      this.subscribeToSaveResponse(this.insuranceService.applyForHealthInsuranceUsingPOST(healthInsurance));
+    }
     // this.subscribeToSaveResponse(this.insuranceService.applyForHealthInsuranceUsingPOST(healthInsurance));
   }
 
@@ -179,9 +189,11 @@ export class HealthInsuranceComponent implements OnInit {
       documentUploader: {
         email: this.documentUploader?.get('email')!.value,
         phone: this.documentUploader?.get('phone')!.value,
-        officeId: this.documentUploader?.get('officeId')!.value,
+        centerId: this.documentUploader?.get('centerId')!.value,
       },
       familyMembers: familyMembersArray,
+      anyPreExistingIllness: this.editForm.get(['anyPreExistingIllness'])!.value,
+      illnessDetails: this.editForm.get(['illnessDetails'])!.value,
     };
   }
 

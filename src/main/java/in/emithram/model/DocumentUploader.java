@@ -10,7 +10,7 @@ public class DocumentUploader {
     @Pattern(regexp = "^[6789][0-9]{9}+$")
     private String phone;
 
-    private String officeId;
+    private String centerId;
 
     public String getEmail() {
         return email;
@@ -28,12 +28,12 @@ public class DocumentUploader {
         this.phone = phone;
     }
 
-    public String getOfficeId() {
-        return officeId;
+    public String getCenterId() {
+        return centerId;
     }
 
-    public void setOfficeId(String officeId) {
-        this.officeId = officeId;
+    public void setCenterId(String centerId) {
+        this.centerId = centerId;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class DocumentUploader {
         return "DocumentUploader{" +
             "email='" + email + '\'' +
             ", phone='" + phone + '\'' +
-            ", officeId='" + officeId + '\'' +
+            ", officeId='" + centerId + '\'' +
             '}';
     }
 }

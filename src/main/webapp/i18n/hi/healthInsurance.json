@@ -30,7 +30,10 @@
       "gender": "Gender",
       "anyoneSmokesInTheFamily": "Anyone Smokes In The Family",
       "familyMember": "Family Member",
-      "documentUploader": "Document Uploader"
+      "documentUploader": "Document Uploader",
+      "paymentCompleted": "Do you want to pay now?",
+      "anyPreExistingIllness": "Any Pre existing illness or medication which has been carried out",
+      "illnessDetails": "Illness or medication details"
     }
   }
 }

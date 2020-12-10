@@ -48,19 +48,19 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-control-label" jhiTranslate="readymoneyfin.documentUploader.officeId"
-                            for="field_documentUploader_officeId">Office Id</label>
-                        <input type="text" class="form-control" name="officeId" id="field_documentUploader_officeId"
-                            formControlName="officeId" />
+                        <label class="form-control-label" jhiTranslate="readymoneyfin.documentUploader.centerId"
+                            for="field_documentUploader_centerId">Office Id</label>
+                        <input type="text" class="form-control" name="centerId" id="field_documentUploader_centerId"
+                            formControlName="centerId" />
                         <div
-                            *ngIf="documentUploader?.get('officeId')!.invalid && (documentUploader?.get('officeId')!.dirty || documentUploader?.get('officeId')!.touched)">
+                            *ngIf="documentUploader?.get('centerId')!.invalid && (documentUploader?.get('centerId')!.dirty || documentUploader?.get('centerId')!.touched)">
                             <small class="form-text text-danger"
-                                *ngIf="documentUploader?.get('officeId')?.errors?.required"
+                                *ngIf="documentUploader?.get('centerId')?.errors?.required"
                                 jhiTranslate="entity.validation.required">
                                 This field is required.
                             </small>
                             <small class="form-text text-danger"
-                                *ngIf="documentUploader?.get('officeId')?.errors?.pattern"
+                                *ngIf="documentUploader?.get('centerId')?.errors?.pattern"
                                 jhiTranslate="entity.validation.pattern" [translateValues]="{ pattern: 'Email' }">
                                 This field should follow pattern for "Email".
                             </small>
@@ -220,23 +220,6 @@
                         </small>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label class="form-control-label"
-                        jhiTranslate="readymoneyfin.motorInsurance.previousYearClaimDetails"
-                        for="field_previousYearClaimDetails">Previous Year Claim Details</label>
-                    <textarea class="form-control" name="previousYearClaimDetails" id="field_previousYearClaimDetails"
-                        formControlName="previousYearClaimDetails"></textarea>
-                    <div
-                        *ngIf="editForm.get('previousYearClaimDetails')!.invalid && (editForm.get('previousYearClaimDetails')!.dirty || editForm.get('previousYearClaimDetails')!.touched)">
-                        <small class="form-text text-danger"
-                            *ngIf="editForm.get('previousYearClaimDetails')?.errors?.required"
-                            jhiTranslate="entity.validation.required">
-                            This field is required.
-                        </small>
-                    </div>
-                </div>
-
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.anyClaimInPreviousYear"
                         for="field_anyClaimInPreviousYear">Any Claim In Previous Year</label>
@@ -252,6 +235,23 @@
                         </small>
                     </div>
                 </div>
+
+                <div class="form-group" *ngIf="editForm.get('anyClaimInPreviousYear')!.value == true">
+                    <label class="form-control-label"
+                        jhiTranslate="readymoneyfin.motorInsurance.previousYearClaimDetails"
+                        for="field_previousYearClaimDetails">Previous Year Claim Details</label>
+                    <textarea class="form-control" name="previousYearClaimDetails" id="field_previousYearClaimDetails"
+                        formControlName="previousYearClaimDetails"></textarea>
+                    <div
+                        *ngIf="editForm.get('previousYearClaimDetails')!.invalid && (editForm.get('previousYearClaimDetails')!.dirty || editForm.get('previousYearClaimDetails')!.touched)">
+                        <small class="form-text text-danger"
+                            *ngIf="editForm.get('previousYearClaimDetails')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
 
                 <div class="form-group">
                     <label class="form-control-label"
@@ -391,6 +391,20 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.paymentCompleted"
+                        for="field_paymentCompleted">Do you want to pay now?</label>
+                    <input type="checkbox" class="form-control" name="paymentCompleted" id="field_paymentCompleted"
+                        formControlName="paymentCompleted" />
+                    <div
+                        *ngIf="editForm.get('paymentCompleted')!.invalid && (editForm.get('paymentCompleted')!.dirty || editForm.get('paymentCompleted')!.touched)">
+                        <small class="form-text text-danger" *ngIf="editForm.get('paymentCompleted')?.errors?.required"
+                            jhiTranslate="entity.validation.required">
+                            This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group" *ngIf="editForm.get('paymentCompleted')!.value == true">
                     <label class="form-control-label" jhiTranslate="readymoneyfin.motorInsurance.insureAmount"
                         for="field_insureAmount">Insure Amount</label>
                     <input type="text" class="form-control" name="insureAmount" id="field_insureAmount"

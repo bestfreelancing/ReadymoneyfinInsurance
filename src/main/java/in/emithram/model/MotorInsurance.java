@@ -2,9 +2,6 @@ package in.emithram.model;
 
 import in.emithram.model.enumeration.MotorAdditionalCover;
 import in.emithram.model.enumeration.MotorPolicyCoverage;
-import in.emithram.model.enumeration.SumInsured;
-
-import java.util.Arrays;
 
 public class MotorInsurance extends Insurance {
 
@@ -17,8 +14,8 @@ public class MotorInsurance extends Insurance {
     private String previousYearClaimDetails;
     private Boolean anyClaimInPreviousYear;
     private Boolean anyAccidentsInPreviousYear;
-    private Integer previousNcv;
-    private Integer currentNcv;
+    private Integer previousNcb;
+    private Integer currentNcb;
     private String make;
     private String model;
     private String subModel;
@@ -49,20 +46,20 @@ public class MotorInsurance extends Insurance {
         this.anyAccidentsInPreviousYear = anyAccidentsInPreviousYear;
     }
 
-    public Integer getPreviousNcv() {
-        return previousNcv;
+    public Integer getPreviousNcb() {
+        return previousNcb;
     }
 
-    public void setPreviousNcv(Integer previousNcv) {
-        this.previousNcv = previousNcv;
+    public void setPreviousNcb(Integer previousNcb) {
+        this.previousNcb = previousNcb;
     }
 
-    public Integer getCurrentNcv() {
-        return currentNcv;
+    public Integer getCurrentNcb() {
+        return currentNcb;
     }
 
-    public void setCurrentNcv(Integer currentNcv) {
-        this.currentNcv = currentNcv;
+    public void setCurrentNcb(Integer currentNcb) {
+        this.currentNcb = currentNcb;
     }
 
     public String getMake() {
@@ -139,14 +136,14 @@ public class MotorInsurance extends Insurance {
 
     @Override
     public String toString() {
-        return "MotorInsurance{"  +
+        return super.toString()+"\nMotorInsurance{"  +
             ", rcBookContentType='" + rcBookContentType + '\'' +
             ", insuranceContentType='" + insuranceContentType + '\'' +
             ", previousYearClaimDetails='" + previousYearClaimDetails + '\'' +
             ", anyClaimInPreviousYear=" + anyClaimInPreviousYear +
             ", anyAccidentsInPreviousYear=" + anyAccidentsInPreviousYear +
-            ", previousNcv=" + previousNcv +
-            ", currentNcv=" + currentNcv +
+            ", previousNcb=" + previousNcb +
+            ", currentNcb=" + currentNcb +
             ", make='" + make + '\'' +
             ", model='" + model + '\'' +
             ", subModel='" + subModel + '\'' +

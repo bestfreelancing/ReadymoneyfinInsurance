@@ -25,6 +25,8 @@ export interface IHealthInsurance {
   familyMembers?: IFamilyMember[];
   documentUploader?: IDocumentUploader;
   razorpayVerification?: IRazorpayVerification;
+  anyPreExistingIllness?: boolean;
+  illnessDetails?: string;
 }
 
 export class HealthInsurance implements IHealthInsurance {
@@ -46,7 +48,9 @@ export class HealthInsurance implements IHealthInsurance {
     public anyoneSmokesInTheFamily?: boolean,
     public familyMembers?: IFamilyMember[],
     public documentUploader?: IDocumentUploader,
-    public razorpayVerification?: IRazorpayVerification
+    public razorpayVerification?: IRazorpayVerification,
+    public anyPreExistingIllness?: boolean,
+    public illnessDetails?: string
   ) {
     this.married = this.married || false;
     this.anyoneSmokesInTheFamily = this.anyoneSmokesInTheFamily || false;

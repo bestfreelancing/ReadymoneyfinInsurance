@@ -24,9 +24,11 @@
         <li><span th:text="#{health-insurance.gender}+': '">Gender</span><span th:text="*{gender.value}"></span></li>
         <li><span th:text="#{health-insurance.married}+': '">Marital Status</span><span th:text="*{married==true?'Married':'Not Married'}"></span></li>
         <li><span th:text="#{health-insurance.sum-insured}+': '">Sum Insured</span><span th:text="*{sumInsured.value}"></span></li>
-        <li><span th:text="#{health-insurance.smoking}+': '">Make</span><span th:text="*{anyoneSmokesInTheFamily==true?'Yes':'No'}"></span></li>
-        <li><span th:text="#{insure.amount}+': '">Insure Amount</span><span th:text="*{insureAmount}"></span></li>
-        <li><span th:text="#{insurance.paymentId}+': '">Payment Id</span><span th:text="*{razorpayVerification.paymentId}"></span></li>
+        <li><span th:text="#{health-insurance.any-illness}+': '">Any pre existing illness or medication</span><span th:text="*{anyPreExistingIllness == true?'Yes':'No'}"></span></li>
+        <li th:if="*{anyPreExistingIllness==true}"><span th:text="#{health-insurance.illness-details}+': '">Illness or medication details</span><span th:text="*{illnessDetails}"></span></li>
+        <li><span th:text="#{health-insurance.smoking}+': '">Anyone smoke in the family?</span><span th:text="*{anyoneSmokesInTheFamily==true?'Yes':'No'}"></span></li>
+        <li><span th:text="#{insure.amount}+': '">Insure Amount</span><span th:text="*{insureAmount == null ? 'Payment not completed':insureAmount}"></span></li>
+        <li th:if="*{razorpayVerification!=null}"><span th:text="#{insurance.paymentId}+': '">Payment Id</span><span th:text="*{razorpayVerification.paymentId}"></span></li>
     </ul>
     <br>
     <h4 th:if="${#lists.size(insurance.familyMembers) > 0}" th:text="#{health-insurance.family-members}">Family Members</h4>
@@ -38,7 +40,7 @@
     <br>
 </div>
 <div th:object="${insurance.documentUploader}">
-    <p th:text="*{'Contact document uploader- email: '+email+', phone number: '+phone+', office Id: '+officeId}">
+    <p th:text="*{'Contact document uploader- email: '+email+', phone number: '+phone+', center Id: '+centerId}">
     </p>
 </div>
 

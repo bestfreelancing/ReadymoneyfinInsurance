@@ -21,6 +21,8 @@ public class HealthInsurance extends Insurance {
     private SumInsured sumInsured;
     private List<FamilyMember> familyMembers;
     private Boolean anyoneSmokesInTheFamily;
+    private Boolean anyPreExistingIllness;
+    private String illnessDetails;
 
     public Insured getInsured() {
         return insured;
@@ -90,13 +92,29 @@ public class HealthInsurance extends Insurance {
         return dateOfBirth;
     }
 
+    public Boolean getAnyPreExistingIllness() {
+        return anyPreExistingIllness;
+    }
+
+    public void setAnyPreExistingIllness(Boolean anyPreExistingIllness) {
+        this.anyPreExistingIllness = anyPreExistingIllness;
+    }
+
+    public String getIllnessDetails() {
+        return illnessDetails;
+    }
+
+    public void setIllnessDetails(String illnessDetails) {
+        this.illnessDetails = illnessDetails;
+    }
+
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
     @Override
     public String toString() {
-        return "HealthInsurance{" +
+        return super.toString()+"\nHealthInsurance{" +
             ", adharContentType='" + adharContentType + '\'' +
             ", insured=" + insured +
             ", married=" + married +
@@ -105,13 +123,8 @@ public class HealthInsurance extends Insurance {
             ", sumInsured=" + sumInsured +
             ", familyMembers=" + familyMembers +
             ", anyoneSmokesInTheFamily=" + anyoneSmokesInTheFamily +
-            ", documentUploader=" + documentUploader +
-            ", insuredName='" + insuredName + '\'' +
-            ", insuredAddress='" + insuredAddress + '\'' +
-            ", insuredPinCode='" + insuredPinCode + '\'' +
-            ", insuredPhone='" + insuredPhone + '\'' +
-            ", insuredEmail='" + insuredEmail + '\'' +
-            ", insureAmount='" + insureAmount + '\'' +
+            ", anyPreExistingIllness=" + anyPreExistingIllness +
+            ", illnessDetails='" + illnessDetails + '\'' +
             '}';
     }
 }

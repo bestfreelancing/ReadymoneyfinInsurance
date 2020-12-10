@@ -18,7 +18,7 @@
       },
       "email": "Uploader's Email",
       "phone": "Uploder's Phone number",
-      "officeId": "Office Id"
+      "centerId": "Center Id"
     }
   }
 }

@@ -32,12 +32,12 @@ export class MotorInsuranceComponent implements OnInit {
     insuredPinCode: [null, [Validators.required, Validators.pattern('^[0-9]{6}$')]],
     insuredPhone: [null, [Validators.required, Validators.pattern('^[6789][0-9]{9}$')]],
     insuredEmail: [null, [Validators.required, Validators.pattern('^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})$')]],
-    insureAmount: [null, [Validators.required, Validators.pattern('^[0-9]+\\.?[0-9]+$')]],
+    insureAmount: [null, [Validators.pattern('^[0-9]+\\.?[0-9]+$')]],
     rcBook: [null, [Validators.required]],
     rcBookContentType: [],
     insurance: [null, [Validators.required]],
     insuranceContentType: [],
-    previousYearClaimDetails: [null, [Validators.required]],
+    previousYearClaimDetails: [null],
     anyClaimInPreviousYear: [false, [Validators.required]],
     anyAccidentsInPreviousYear: [false, [Validators.required]],
     previousNcb: [null, [Validators.required]],
@@ -50,8 +50,9 @@ export class MotorInsuranceComponent implements OnInit {
     documentUploader: this.fb.group({
       email: [null, [Validators.required, Validators.pattern('^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6})$')]],
       phone: [null, [Validators.required, Validators.pattern('^[6789][0-9]{9}$')]],
-      officeId: [null, [Validators.required]],
+      centerId: [null, [Validators.required]],
     }),
+    paymentCompleted: [false, [Validators.required]],
   });
 
   constructor(
@@ -97,12 +98,20 @@ export class MotorInsuranceComponent implements OnInit {
 
   save(): void {
     this.isSaving = true;
-    this.subscribeToPaymentInitiateResponse(
-      this.insuranceService.getOrderIdUsingGET(
-        this.editForm.get('insureAmount')!.value * 100 + '',
-        'receipt_' + this.editForm.get('insuredPhone')!.value
-      )
-    );
+    if (this.editForm.get('paymentCompleted')!.value === true) {
+      this.subscribeToPaymentInitiateResponse(
+        this.insuranceService.getOrderIdUsingGET(
+          this.editForm.get('insureAmount')!.value * 100 + '',
+          'receipt_' + this.editForm.get('insuredPhone')!.value
+        )
+      );
+    } else {
+      const motorInsurance = this.createFromForm();
+      // eslint-disable-next-line no-console
+      console.log('Motor insurance to be saved', motorInsurance);
+
+      this.subscribeToSaveResponse(this.insuranceService.applyForMotorInsuranceUsingPOST(motorInsurance));
+    }
     // this.checkoutPayment();
 
     // this.subscribeToSaveResponse(this.insuranceService.applyForMotorInsuranceUsingPOST(motorInsurance));
@@ -184,7 +193,7 @@ export class MotorInsuranceComponent implements OnInit {
       documentUploader: {
         email: this.documentUploader?.get('email')!.value,
         phone: this.documentUploader?.get('phone')!.value,
-        officeId: this.documentUploader?.get('officeId')!.value,
+        centerId: this.documentUploader?.get('centerId')!.value,
       },
     };
   }

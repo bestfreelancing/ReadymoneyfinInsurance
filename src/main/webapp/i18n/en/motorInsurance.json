@@ -7,7 +7,7 @@
         "createOrEditLabel": "Apply for Motor Insurance",
         "notFound": "No Motor Insurances found"
       },
-      "created": "A new Motor Insurance is created with identifier {{ param }}",
+      "created": "New application for vehicle {{ param }} is submitted succesfully",
       "updated": "A Motor Insurance is updated with identifier {{ param }}",
       "deleted": "A Motor Insurance is deleted with identifier {{ param }}",
       "delete": {
@@ -27,14 +27,15 @@
       "previousYearClaimDetails": "Previous Year Claim Details",
       "anyClaimInPreviousYear": "Any Claim In Previous Year",
       "anyAccidentsInPreviousYear": "Any Accidents In Previous Year",
-      "previousNcv": "Previous Ncv",
-      "currentNcv": "Current Ncv",
+      "previousNcb": "Previous Ncb",
+      "currentNcb": "Current Ncb",
       "make": "Make",
       "model": "Model",
       "subModel": "Sub Model",
       "policyCoverage": "Policy Coverage",
       "additionalCoverNeeded": "Additional Cover Needed",
-      "documentUploader": "Document Uploader"
+      "documentUploader": "Document Uploader",
+      "paymentCompleted": "Do you want to pay now?"
     }
   }
 }
