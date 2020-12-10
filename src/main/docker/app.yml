@@ -1,7 +1,7 @@
 version: '2'
 services:
   emithraminsurance-app:
-    image: emithraminsurance
+    image: bestfreelancing/readymoneyfin-insurance
     environment:
       - _JAVA_OPTIONS=-Xmx256m -Xms128m
       - SPRING_PROFILES_ACTIVE=prod,swagger
