@@ -23,7 +23,7 @@
       "insuredEmail": "Insured Email",
       "insureAmount": "Insure Amount",
       "rcBook": "Rc Book(Only upload scanned image or pdf)",
-      "insurance": "Insurance(Only upload scanned image or pdf)",
+      "insurance": "Insurance(Only upload scanned image or pdf of main page of insurance document)",
       "previousYearClaimDetails": "Previous Year Claim Details",
       "anyClaimInPreviousYear": "Any Claim In Previous Year",
       "anyAccidentsInPreviousYear": "Any Accidents In Previous Year",

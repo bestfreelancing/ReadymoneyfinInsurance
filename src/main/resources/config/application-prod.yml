@@ -34,8 +34,8 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: sanilkumar.onlinework1@gmail.com
-    password: ivfsbdascgbrijcr
+    username: thebestfreelancing@gmail.com
+    password: dvwzqwrglwpkmhbl
     properties:
       mail:
         smtp:
@@ -129,7 +129,7 @@ payment:
 # application:
 application:
   insurance:
-    recipients: sanilkumarp001@gmail.com, sanilkumar.onlinework@gmail.com
+    recipients: manojabraham@readymoneyfin.com, sanilkumar.onlinework@gmail.com
     health-insurance:
       template: mail/healthInsuranceApplyMail
     motor-insurance:
